@@ -38,6 +38,7 @@ public class RegisterView extends javax.swing.JFrame {
         btnRegister = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         lblMessage = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,28 +62,37 @@ public class RegisterView extends javax.swing.JFrame {
         lblMessage.setForeground(new java.awt.Color(255, 0, 40));
         lblMessage.setText("Message");
 
+        lblTitle.setText("REGISTER");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnBack)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
-                        .addComponent(btnRegister))
-                    .addComponent(tfName, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfUsername, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfPassword, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfRePassword, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnBack)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
+                                .addComponent(btnRegister))
+                            .addComponent(tfName, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfUsername, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfPassword, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfRePassword, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(151, 151, 151)
+                        .addComponent(lblTitle)))
                 .addContainerGap(62, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addGap(28, 28, 28)
+                .addComponent(lblTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -111,6 +121,7 @@ public class RegisterView extends javax.swing.JFrame {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnRegister;
     private javax.swing.JLabel lblMessage;
+    private javax.swing.JLabel lblTitle;
     private javax.swing.JTextField tfName;
     private javax.swing.JTextField tfPassword;
     private javax.swing.JTextField tfRePassword;
@@ -124,20 +135,30 @@ public class RegisterView extends javax.swing.JFrame {
     public void setBackEvent(ActionListener act){
         btnBack.addActionListener(act);
     }
+
     
-    public String getTFNama(){
+    public void setTFNamaText(String text){
+        tfName.setText(text);
+    }
+    
+    public void setTFUsernameText(String text){
+        tfUsername.setText(text);
+    }
+    
+    
+    public String getTFNamaText(){
         return tfName.getText();
     }
     
-    public String getTFUsername(){
+    public String getTFUsernameText(){
         return tfUsername.getText();
     }
     
-    public String getTFPassword(){
+    public String getTFPasswordText(){
         return tfPassword.getText();
     }
     
-    public String getTFRePassword(){
+    public String getTFRePasswordText(){
         return tfRePassword.getText();
     }
         
@@ -154,4 +175,7 @@ public class RegisterView extends javax.swing.JFrame {
         lblMessage.setText(message);
     }
     
+    public void setLblTitle(String title){
+        lblTitle.setText(title);
+    }
 }
